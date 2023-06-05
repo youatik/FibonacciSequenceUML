@@ -1,0 +1,10 @@
+@startuml
+
+package fibonacci {
+  interface FibonacciInterface {
+    + fibonacci(int n): long
+    + getFibonacciSequence(): List<Long>
+  }
+}
+
+@enduml
