@@ -5,6 +5,16 @@ package fibonacci {
     + fibonacci(int n): long
     + getFibonacciSequence(): List<Long>
   }
+
+  abstract class FibonacciTemplate {
+    - fibonacciSequence: List<Long>
+    + FibonacciTemplate()
+    + calculate(int n): long
+    # generateFibonacci(int n): long
+    + getFibonacciSequence(): List<Long>
+  }
+  
+  FibonacciInterface <|.. FibonacciTemplate
 }
 
 @enduml
