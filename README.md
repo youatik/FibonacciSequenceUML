@@ -2,4 +2,5 @@
 UML for FibonacciSequence
 
 
-![plantuml-7](https://github.com/youatik/FibonacciSequenceUML/assets/112843400/f9c2d703-31c0-4ee3-80ef-85a69ecbb120)
+
+![plantuml](https://github.com/youatik/FibonacciSequenceUML/assets/112843400/46ae35bc-3701-49d9-b3ea-bb4cfdce9795)
