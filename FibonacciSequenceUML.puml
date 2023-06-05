@@ -1,5 +1,9 @@
 @startuml
 
+
+top to bottom direction
+
+
 package fibonacci {
   interface FibonacciInterface {
     + fibonacci(int n): long
@@ -18,9 +22,51 @@ package fibonacci {
     + generateFibonacci(int n): long
     + fibonacci(int n): long
   }
+
+  class FibonacciRecursive {
+    + generateFibonacci(int n): long
+    + fibonacci(int n): long
+  }
+
+  class FibonacciComposite {
+    - fibonacciObjects: List<FibonacciInterface>
+    - resultObjects: List<Result>
+    + FibonacciComposite()
+    + addFibonacciObject(fibonacciObject: FibonacciInterface): void
+    + fibonacci(n: int): long
+    + getFibonacciSequence(): List<Long>
+    + clearFibonacciObjects(): void
+    + getResultObjects(): List<Result>
+  }
   
-  FibonacciInterface <|.. FibonacciTemplate
   FibonacciTemplate <|-- Fibonacci
+  FibonacciTemplate <|-- FibonacciRecursive
+  FibonacciInterface <|.. FibonacciTemplate
+  FibonacciInterface <|-- FibonacciComposite
+  FibonacciComposite*--Fibonacci
+  FibonacciComposite*--FibonacciRecursive
+
+}
+
+
+
+
+package timeFormatting {
+  class TimeFormatter {
+    + formatExecutionTime(executionTime: long): String
+  }
+}
+
+package result {
+  class Result {
+    - result: long
+    - executionTime: long
+    - fibonacciObject: FibonacciInterface
+    + Result(result: long, executionTime: long, fibonacciObject: FibonacciInterface)
+    + getResult(): long
+    + getExecutionTime(): long
+    + getFibonacciObject(): FibonacciInterface
+  }
 }
 
 @enduml
