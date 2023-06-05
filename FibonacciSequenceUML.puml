@@ -13,8 +13,14 @@ package fibonacci {
     # generateFibonacci(int n): long
     + getFibonacciSequence(): List<Long>
   }
+
+  class Fibonacci {
+    + generateFibonacci(int n): long
+    + fibonacci(int n): long
+  }
   
   FibonacciInterface <|.. FibonacciTemplate
+  FibonacciTemplate <|-- Fibonacci
 }
 
 @enduml
